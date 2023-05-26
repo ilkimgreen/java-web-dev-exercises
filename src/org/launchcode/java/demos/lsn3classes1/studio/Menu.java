@@ -10,12 +10,35 @@ public class Menu {
 
     // Constructors
 
-    public Menu(){
+    public Menu() {
         this.lastUpdated = new Date();
     }
 
 
     //Methods
+    public void addMenuItem(MenuItem item) {
+        this.menuItems.add(item);
+        this.lastUpdated = new Date();
+    }
+
+    public void removeMenuItem(MenuItem item) {
+        this.menuItems.remove(item);
+    }
+
+    @Override
+    public String toString() {
+        String returnString = "";
+        for (MenuItem item : this.menuItems) {
+            returnString += item.toString() + "\n\n";
+        }
+        return returnString;
+    }
+
+
+
+
+
+
     // Getters and Setters
 
     public ArrayList<MenuItem> getMenuItems() {
